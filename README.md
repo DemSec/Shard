@@ -70,12 +70,12 @@ sudo nano /etc/apache2/sites-available/default-ssl.conf
 http://www.tecmint.com/apache-security-tips/
 http://www.petefreitag.com/item/505.cfm
 
-#### Install Motion:
+#### Install Motion: 
 https://youtu.be/3m29S2rbqBw
-to make it work with official RaspiCam:
+#### Make it work with official RaspiCam:
 https://raspberrypi.stackexchange.com/questions/10480/raspi-camera-board-and-motion#26386
 
-#### Now, clone the repository
+#### Now, clone this repository
 
 #### Make it a service to run at boot:
 https://learn.adafruit.com/running-programs-automatically-on-your-tiny-computer/systemd-writing-and-enabling-a-service
