@@ -43,16 +43,13 @@ sudo chmod 600 /etc/ssl/localcerts/apache*
 sudo a2enmod ssl
 sudo nano /etc/apache2/sites-available/default-ssl.conf
     ServerName 192.168.1.X:443
-    (or:
-    NameVirtualHost 192.168.1.X:443
-    <VirtualHost 192.168.1.X:443>)
     SSLEngine On
     SSLCertificateFile /etc/ssl/localcerts/apache.pem
     SSLCertificateKeyFile /etc/ssl/localcerts/apache.key
 sudo a2ensite sitename
-(port 443 is open by defauld in: /etc/apache2/ports.conf)
+(port 443 is open by default in: /etc/apache2/ports.conf)
 sudo service apache2 restart
-https://127.0.0.1 (or https://192.168.1.X)
+Browse to https://192.168.1.X
 ````
 
 #### (python-pip is installed by default)
@@ -62,7 +59,7 @@ https://127.0.0.1 (or https://192.168.1.X)
 sudo nano /etc/apache2/sites-available/000-default.conf
     DocumentRoot /var/www/Shard/templates
 sudo nano /etc/apache2/sites-available/default-ssl.conf
-    ServerName 192.168.1.14:443
+    ServerName 192.168.1.X:443
     DocumentRoot /var/www/Shard/templates
 ````
 
