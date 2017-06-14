@@ -34,7 +34,7 @@ sudo pip install flask
 #### Install Apache SSL: https://wiki.debian.org/Self-Signed_Certificate
 ````
 sudo apt-get install apache2
-sudo apt-get install apache2 openssl
+sudo apt-get install openssl
 sudo mkdir -p /etc/ssl/localcerts 
 sudo openssl req -new -x509 -days 365 -nodes -out /etc/ssl/localcerts/apache.pem -keyout /etc/ssl/localcerts/apache.key
     FQDN: 192.168.1.X
