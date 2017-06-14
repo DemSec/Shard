@@ -21,7 +21,7 @@ sudo apt-get upgrade
 
 #### (Python and GPIO is pre-installed)
 
-#### A similar project made by Sparkfun:__ https://www.youtube.com/watch?v=L55QYFnnrgo
+#### A similar project made by Sparkfun: https://www.youtube.com/watch?v=L55QYFnnrgo
 
 #### Install Flask: http://flask.pocoo.org/
 http://mattrichardson.com/Raspberry-Pi-Flask/
