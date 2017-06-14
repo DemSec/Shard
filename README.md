@@ -4,7 +4,9 @@
 __Project path: /var/www/Shard__
 
 __Enable SSH, SPI, change host name:__
-'sudo raspi-config'
+'''
+sudo raspi-config
+'''
     
 __Change password:__
 sudo passwd <user>
