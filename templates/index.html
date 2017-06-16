@@ -144,26 +144,12 @@
 <![endif]-->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-    <div class="controller">
-      <div class="leftPanel">
-        <button class="green" id="up" ontouchstart="upPress()" ontouchend="upRelease()">⇧</button>
-        <button class="green" id="down" ontouchstart="downPress()" ontouchend="downRelease()">⇩</button>
-      </div>
-      <div class="centerPanel">
-        <button class="orange" id="lights" ontouchstart="lightsPress()" ontouchend="lightsRelease()">💡</button>
-      </div>
-      <div class="rightPanel">
-        <button class="green" id="left" ontouchstart="leftPress()" ontouchend="leftRelease()">⇦</button>
-        <button class="green" id="right" ontouchstart="rightPress()" ontouchend="rightRelease()">⇨</button>
-      </div>
-    </div>
     <script>
       var click = new Audio("https://raw.githubusercontent.com/Quantum-Helix/Shard/master/templates/Assets/Button%20Click%201.wav");
       var unclick = new Audio("https://raw.githubusercontent.com/Quantum-Helix/Shard/master/templates/Assets/Button%20Unclick%201.wav");
 
       function upPress() {
         $.post("/", {motor: "1"});
-        document.getElementById("up").style.color = "grey";
         document.getElementById("up").style.backgroundColor = "#3e8e41";
         document.getElementById("up").style.boxShadow = "0 5px #666";
         document.getElementById("up").style.transform = "translateY(4px)";
@@ -171,7 +157,6 @@
       }
       function upRelease() {
         $.post("/", {motor: "0"});
-        document.getElementById("up").style.color = "white";
         document.getElementById("up").style.backgroundColor = "#4CAF50";
         document.getElementById("up").style.boxShadow = "0 9px #999";
         document.getElementById("up").style.transform = "translateY(0px)";
@@ -179,7 +164,6 @@
       }
       function downPress() {
         $.post("/", {motor: "-1"});
-        document.getElementById("down").style.color = "grey";
         document.getElementById("down").style.backgroundColor = "#3e8e41";
         document.getElementById("down").style.boxShadow = "0 5px #666";
         document.getElementById("down").style.transform = "translateY(4px)";
@@ -187,7 +171,6 @@
       }
       function downRelease() {
         $.post("/", {motor: "0"});
-        document.getElementById("down").style.color = "white";
         document.getElementById("down").style.backgroundColor = "#4CAF50";
         document.getElementById("down").style.boxShadow = "0 9px #999";
         document.getElementById("down").style.transform = "translateY(0px)";
@@ -195,7 +178,6 @@
       }
       function leftPress() {
         $.post("/", {turn: "-1"});
-        document.getElementById("left").style.color = "grey";
         document.getElementById("left").style.backgroundColor = "#3e8e41";
         document.getElementById("left").style.boxShadow = "0 5px #666";
         document.getElementById("left").style.transform = "translateY(4px)";
@@ -203,7 +185,6 @@
       }
       function leftRelease() {
         $.post("/", {turn: "0"});
-        document.getElementById("left").style.color = "white";
         document.getElementById("left").style.backgroundColor = "#4CAF50";
         document.getElementById("left").style.boxShadow = "0 9px #999";
         document.getElementById("left").style.transform = "translateY(0px)";
@@ -211,7 +192,6 @@
       }
       function rightPress() {
         $.post("/", {turn: "1"});
-        document.getElementById("right").style.color = "grey";
         document.getElementById("right").style.backgroundColor = "#3e8e41";
         document.getElementById("right").style.boxShadow = "0 5px #666";
         document.getElementById("right").style.transform = "translateY(4px)";
@@ -219,7 +199,6 @@
       }
       function rightRelease() {
         $.post("/", {turn: "0"});
-        document.getElementById("right").style.color = "white";
         document.getElementById("right").style.backgroundColor = "#4CAF50";
         document.getElementById("right").style.boxShadow = "0 9px #999";
         document.getElementById("right").style.transform = "translateY(0px)";
@@ -240,5 +219,18 @@
         unclick.play();
       }
     </script>
+    <div class="controller">
+      <div class="leftPanel">
+        <button class="green" id="up" ontouchstart="upPress()" ontouchend="upRelease()">⇧</button>
+        <button class="green" id="down" ontouchstart="downPress()" ontouchend="downRelease()">⇩</button>
+      </div>
+      <div class="centerPanel">
+        <button class="orange" id="lights" ontouchstart="lightsPress()" ontouchend="lightsRelease()">💡</button>
+      </div>
+      <div class="rightPanel">
+        <button class="green" id="left" ontouchstart="leftPress()" ontouchend="leftRelease()">⇦</button>
+        <button class="green" id="right" ontouchstart="rightPress()" ontouchend="rightRelease()">⇨</button>
+      </div>
+    </div>
   </body>
 </html>
