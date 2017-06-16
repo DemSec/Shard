@@ -6,7 +6,6 @@
     <title>Shard</title>
     <meta name="description" content="">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type='text/css'/>
     <style>
       * {
         -webkit-touch-callout: none; /* iOS Safari */
@@ -15,50 +14,11 @@
         -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
         user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-        font-family: 'Open Sans';
       }
       body {
         background: #2c3e50;
       }
-      ::-moz-selection { /* Code for Firefox */
-        background: none;
-      }
-      ::selection {
-        background: none;
-      }
-      %os-element-reset {
-        display: inline-block;
-        overflow: visible;
-
-        padding: 0;
-        margin: 0;
-        outline: 0;
-
-        font: inherit;
-        color: inherit;
-        background-color: transparent;
-        border: none;
-
-        text-transform: inherit;
-
-        -webkit-font-smoothing: inherit;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-      }
-      %button-reset{
-        @extend %os-element-reset;
-        cursor: pointer;
-        -webkit-box-sizing: content-box;
-        -moz-box-sizing: content-box;
-        box-sizing: content-box;
-
-        &::-moz-focus-inner {
-          padding: 0;
-          border: 0;
-        }
-      }
       button {
-        @extend %button-reset;
         width: 80px;
         height: 80px;
         padding: auto;
@@ -136,14 +96,17 @@
         right: 100px;
       }
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://raw.githubusercontent.com/h5bp/html5-boilerplate/master/dist/js/vendor/modernizr-3.5.0.min.js"></script>
   </head>
-  <body>
+  <body onload="loadSounds();">
     <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upg$
 <![endif]-->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+    <script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
+    
     <script>
       var click = new Audio("https://raw.githubusercontent.com/Quantum-Helix/Shard/master/templates/Assets/Button%20Click%201.wav");
       var unclick = new Audio("https://raw.githubusercontent.com/Quantum-Helix/Shard/master/templates/Assets/Button%20Unclick%201.wav");
