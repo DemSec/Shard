@@ -6,6 +6,7 @@
     <title>Shard</title>
     <meta name="description" content="">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type='text/css'/>
     <style>
       * {
         -webkit-touch-callout: none; /* iOS Safari */
@@ -14,16 +15,55 @@
         -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
         user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+        font-family: 'Open Sans';
       }
       body {
-      	background: #2c3e50;
+        background: #2c3e50;
       }
-      .button {
+      ::-moz-selection { /* Code for Firefox */
+        background: none;
+      }
+      ::selection {
+        background: none;
+      }
+      %os-element-reset {
+        display: inline-block;
+        overflow: visible;
+
+        padding: 0;
+        margin: 0;
+        outline: 0;
+
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+        border: none;
+
+        text-transform: inherit;
+
+        -webkit-font-smoothing: inherit;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+      %button-reset{
+        @extend %os-element-reset;
+        cursor: pointer;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+
+        &::-moz-focus-inner {
+          padding: 0;
+          border: 0;
+        }
+      }
+      button {
+        @extend %button-reset;
         width: 80px;
         height: 80px;
         padding: auto;
         margin: 10px;
-        font-size: 32px;
+        font-size: 40px;
         cursor: pointer;
         text-align: center;
         text-decoration: none;
@@ -31,12 +71,13 @@
         color: #fff;
         border: none;
         border-radius: 15px;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
       }
-      .button.green {
+      button.green {
         background-color: #4CAF50;
         box-shadow: 0 9px #999;
       }
-      .button.orange {
+      button.orange {
         background-color: #f77c2a;
         box-shadow: 0 9px #db5a04;
       }
@@ -90,7 +131,7 @@
         right: 50px;
       }
       #lights {
-      	position: fixed;
+        position: fixed;
         bottom: 150px;
         right: 100px;
       }
@@ -103,27 +144,30 @@
 <![endif]-->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-
     <div class="controller">
       <div class="leftPanel">
-        <button class="button green" id="up" ontouchstart="upPress()" ontouchend="upRelease()">⇧</button>
-        <button class="button green" id="down" ontouchstart="downPress()" ontouchend="downRelease()">⇩</button>
+        <button class="green" id="up" ontouchstart="upPress()" ontouchend="upRelease()">⇧</button>
+        <button class="green" id="down" ontouchstart="downPress()" ontouchend="downRelease()">⇩</button>
       </div>
       <div class="centerPanel">
-        <button class="button orange" id="lights" ontouchstart="lightsPress()" ontouchend="lightsRelease()">💡</button>
+        <button class="orange" id="lights" ontouchstart="lightsPress()" ontouchend="lightsRelease()">💡</button>
       </div>
       <div class="rightPanel">
-        <button class="button green" id="left" ontouchstart="leftPress()" ontouchend="leftRelease()">⇦</button>
-        <button class="button green" id="right" ontouchstart="rightPress()" ontouchend="rightRelease()">⇨</button>
+        <button class="green" id="left" ontouchstart="leftPress()" ontouchend="leftRelease()">⇦</button>
+        <button class="green" id="right" ontouchstart="rightPress()" ontouchend="rightRelease()">⇨</button>
       </div>
     </div>
     <script>
+      var click = new Audio("https://raw.githubusercontent.com/Quantum-Helix/Shard/master/templates/Assets/Button%20Click%201.wav");
+      var unclick = new Audio("https://raw.githubusercontent.com/Quantum-Helix/Shard/master/templates/Assets/Button%20Unclick%201.wav");
+
       function upPress() {
         $.post("/", {motor: "1"});
         document.getElementById("up").style.color = "grey";
         document.getElementById("up").style.backgroundColor = "#3e8e41";
         document.getElementById("up").style.boxShadow = "0 5px #666";
         document.getElementById("up").style.transform = "translateY(4px)";
+        click.play();
       }
       function upRelease() {
         $.post("/", {motor: "0"});
@@ -131,6 +175,7 @@
         document.getElementById("up").style.backgroundColor = "#4CAF50";
         document.getElementById("up").style.boxShadow = "0 9px #999";
         document.getElementById("up").style.transform = "translateY(0px)";
+        unclick.play();
       }
       function downPress() {
         $.post("/", {motor: "-1"});
@@ -138,6 +183,7 @@
         document.getElementById("down").style.backgroundColor = "#3e8e41";
         document.getElementById("down").style.boxShadow = "0 5px #666";
         document.getElementById("down").style.transform = "translateY(4px)";
+        click.play();
       }
       function downRelease() {
         $.post("/", {motor: "0"});
@@ -145,6 +191,7 @@
         document.getElementById("down").style.backgroundColor = "#4CAF50";
         document.getElementById("down").style.boxShadow = "0 9px #999";
         document.getElementById("down").style.transform = "translateY(0px)";
+        unclick.play();
       }
       function leftPress() {
         $.post("/", {turn: "-1"});
@@ -152,6 +199,7 @@
         document.getElementById("left").style.backgroundColor = "#3e8e41";
         document.getElementById("left").style.boxShadow = "0 5px #666";
         document.getElementById("left").style.transform = "translateY(4px)";
+        click.play();
       }
       function leftRelease() {
         $.post("/", {turn: "0"});
@@ -159,6 +207,7 @@
         document.getElementById("left").style.backgroundColor = "#4CAF50";
         document.getElementById("left").style.boxShadow = "0 9px #999";
         document.getElementById("left").style.transform = "translateY(0px)";
+        unclick.play();
       }
       function rightPress() {
         $.post("/", {turn: "1"});
@@ -166,6 +215,7 @@
         document.getElementById("right").style.backgroundColor = "#3e8e41";
         document.getElementById("right").style.boxShadow = "0 5px #666";
         document.getElementById("right").style.transform = "translateY(4px)";
+        click.play();
       }
       function rightRelease() {
         $.post("/", {turn: "0"});
@@ -173,20 +223,21 @@
         document.getElementById("right").style.backgroundColor = "#4CAF50";
         document.getElementById("right").style.boxShadow = "0 9px #999";
         document.getElementById("right").style.transform = "translateY(0px)";
+        unclick.play();
       }
       function lightsPress() {
         $.post("/", {lights: "1"});
-        document.getElementById("lightsOn").style.color = "grey";
-        document.getElementById("lightsOn").style.backgroundColor = "#dd6c21";
-        document.getElementById("lightsOn").style.boxShadow = "0 9px #999";
-        document.getElementById("lightsOn").style.transform = "translateY(0px)";
+        document.getElementById("lights").style.backgroundColor = "#dd6c21";
+        document.getElementById("lights").style.boxShadow = "0 5px #999";
+        document.getElementById("lights").style.transform = "translateY(4px)";
+        click.play();
       }
       function lightsRelease() {
         $.post("/", {lights: "0"});
-        document.getElementById("lightsOn").style.color = "white";
-        document.getElementById("lightsOn").style.backgroundColor = "#f77c2a";
-        document.getElementById("lightsOn").style.boxShadow = "0 9px #999";
-        document.getElementById("lightsOn").style.transform = "translateY(0px)";
+        document.getElementById("lights").style.backgroundColor = "#f77c2a";
+        document.getElementById("lights").style.boxShadow = "0 9px #db5a04";
+        document.getElementById("lights").style.transform = "translateY(0px)";
+        unclick.play();
       }
     </script>
   </body>
