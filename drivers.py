@@ -45,9 +45,9 @@ def motor(speed):
 		GPIO.output(MotorA_1, GPIO.HIGH)
 		GPIO.output(MotorA_2, GPIO.LOW)
 	else:
-		motorPWM.stop()
+		motorPWM.changeDutyCycle(speed)
 		GPIO.output(MotorA_1, GPIO.LOW)
-                GPIO.output(MotorA_2, GPIO.LOW)
+        GPIO.output(MotorA_2, GPIO.LOW)
 
 def turn(angle):
 	if angle > 0:
@@ -60,7 +60,7 @@ def turn(angle):
 		GPIO.output(MotorB_1, GPIO.LOW)
 		GPIO.output(MotorB_2, GPIO.HIGH)
 	else:
-		turnPWM.stop()
+		turnPWM.changeDutyCycle(angle)
 		GPIO.output(MotorB_1, GPIO.LOW)
 		GPIO.output(MotorB_2, GPIO.LOW)
 
@@ -71,22 +71,22 @@ def ledFL(state):
 		GPIO.output(LED_WhiteL, GPIO.LOW)
 
 def ledFR(state):
-        if state > 0:
-                GPIO.output(LED_WhiteR, GPIO.HIGH)
-        else:
-                GPIO.output(LED_WhiteR, GPIO.LOW)
+    if state > 0:
+		GPIO.output(LED_WhiteR, GPIO.HIGH)
+	else:
+		GPIO.output(LED_WhiteR, GPIO.LOW)
 
 def ledRL(state):
-        if state > 0:
-                GPIO.output(LED_RedL, GPIO.HIGH)
-        else:
-                GPIO.output(LED_RedL, GPIO.LOW)
+	if state > 0:
+		GPIO.output(LED_RedL, GPIO.HIGH)
+	else:
+		GPIO.output(LED_RedL, GPIO.LOW)
 
 def ledRR(state):
-        if state > 0:
-                GPIO.output(LED_RedR, GPIO.HIGH)
-        else:
-                GPIO.output(LED_RedR, GPIO.LOW)
+	if state > 0:
+		GPIO.output(LED_RedR, GPIO.HIGH)
+	else:
+		GPIO.output(LED_RedR, GPIO.LOW)
 
 def lights(state):
 	if state == 0:
