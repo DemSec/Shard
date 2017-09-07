@@ -99,86 +99,72 @@
     <!--<script src="https://raw.githubusercontent.com/h5bp/html5-boilerplate/master/dist/js/vendor/modernizr-3.5.0.min.js"></script>-->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <!--<script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>-->
-    <script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
+    <!--<script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>-->
   </head>
-  <body onload="loadSounds();">
+  <body>
     <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upg$
 <![endif]-->
     <script>
-      function loadSounds() {
-        createjs.Sound.registerSound("https://raw.githubusercontent.com/Quantum-Helix/Shard/master/templates/Assets/Button%20Click%201.ogg", "click");
-        createjs.Sound.registerSound("https://raw.githubusercontent.com/Quantum-Helix/Shard/master/templates/Assets/Button%20Unclick%201.ogg", "unclick");
-      }
       function upPress() {
-        $.post("/", {motor: "1"});
         document.getElementById("up").style.backgroundColor = "#3e8e41";
         document.getElementById("up").style.boxShadow = "0 5px #666";
         document.getElementById("up").style.transform = "translateY(4px)";
-        createjs.Sound.play("click")
+        $.post("/", {motor: "1"});
       }
       function upRelease() {
-        $.post("/", {motor: "0"});
         document.getElementById("up").style.backgroundColor = "#4CAF50";
         document.getElementById("up").style.boxShadow = "0 9px #999";
         document.getElementById("up").style.transform = "translateY(0px)";
-        createjs.Sound.play("unclick")
+        $.post("/", {motor: "0"});
       }
       function downPress() {
-        $.post("/", {motor: "-1"});
         document.getElementById("down").style.backgroundColor = "#3e8e41";
         document.getElementById("down").style.boxShadow = "0 5px #666";
         document.getElementById("down").style.transform = "translateY(4px)";
-        createjs.Sound.play("click")
+        $.post("/", {motor: "-1"});
       }
       function downRelease() {
-        $.post("/", {motor: "0"});
         document.getElementById("down").style.backgroundColor = "#4CAF50";
         document.getElementById("down").style.boxShadow = "0 9px #999";
         document.getElementById("down").style.transform = "translateY(0px)";
-        createjs.Sound.play("unclick")
+        $.post("/", {motor: "0"});
       }
       function leftPress() {
-        $.post("/", {turn: "-1"});
         document.getElementById("left").style.backgroundColor = "#3e8e41";
         document.getElementById("left").style.boxShadow = "0 5px #666";
         document.getElementById("left").style.transform = "translateY(4px)";
-        createjs.Sound.play("click")
+        $.post("/", {turn: "-1"});
       }
       function leftRelease() {
-        $.post("/", {turn: "0"});
         document.getElementById("left").style.backgroundColor = "#4CAF50";
         document.getElementById("left").style.boxShadow = "0 9px #999";
         document.getElementById("left").style.transform = "translateY(0px)";
-        createjs.Sound.play("unclick")
+        $.post("/", {turn: "0"});
       }
       function rightPress() {
-        $.post("/", {turn: "1"});
         document.getElementById("right").style.backgroundColor = "#3e8e41";
         document.getElementById("right").style.boxShadow = "0 5px #666";
         document.getElementById("right").style.transform = "translateY(4px)";
-        createjs.Sound.play("click")
+        $.post("/", {turn: "1"});
       }
       function rightRelease() {
-        $.post("/", {turn: "0"});
         document.getElementById("right").style.backgroundColor = "#4CAF50";
         document.getElementById("right").style.boxShadow = "0 9px #999";
         document.getElementById("right").style.transform = "translateY(0px)";
-        createjs.Sound.play("unclick")
+        $.post("/", {turn: "0"});
       }
       function lightsPress() {
-        $.post("/", {lights: "1"});
         document.getElementById("lights").style.backgroundColor = "#dd6c21";
         document.getElementById("lights").style.boxShadow = "0 5px #999";
         document.getElementById("lights").style.transform = "translateY(4px)";
-        createjs.Sound.play("click")
+        $.post("/", {lights: "1"});
       }
       function lightsRelease() {
-        $.post("/", {lights: "0"});
         document.getElementById("lights").style.backgroundColor = "#f77c2a";
         document.getElementById("lights").style.boxShadow = "0 9px #db5a04";
         document.getElementById("lights").style.transform = "translateY(0px)";
-        createjs.Sound.play("unclick")
+        $.post("/", {lights: "0"});
       }
     </script>
     <div class="controller">
@@ -187,7 +173,7 @@
         <button class="green" id="down" ontouchstart="downPress();" ontouchend="downRelease();">⇩</button>
       </div>
       <div class="centerPanel">
-        <button class="orange" id="lights" onmousedown="lightsPress();" onmouseup="lightsRelease();">💡</button>
+        <button class="orange" id="lights" ontouchstart="lightsPress();" ontouchend="lightsRelease();">💡</button>
       </div>
       <div class="rightPanel">
         <button class="green" id="left" ontouchstart="leftPress();" ontouchend="leftRelease();">⇦</button>
@@ -196,3 +182,4 @@
     </div>
   </body>
 </html>
+

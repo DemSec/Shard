@@ -1,21 +1,15 @@
 from flask import Flask, request, render_template#, send_file
 app = Flask(__name__)
 
-import control as Control
-import drivers as Drive
-Drive.setup()
-
 @app.route('/', methods=['GET'])
 def index():
 	return render_template('index.html')
 
 @app.route('/', methods=['POST'])
 def control():
-	return Control.run(request)
-
-@app.route('/test', methods=['GET'])
-def test():
-	return render_template('test.html')
+	import control # Breaks if import is global
+	control.run(request)
+	#return render_template('index.html')
 
 if __name__ == "__main__":
-	app.run(host='0.0.0.0', port=80, debug=True)
+	app.run(host='0.0.0.0', port=5000, ssl_context=context, debug=True)
