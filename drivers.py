@@ -29,6 +29,7 @@ def setup():
 	GPIO.setup(MotorB_PWM, GPIO.OUT)
 	GPIO.output(MotorB_PWM, GPIO.HIGH)
 	motorPWM = GPIO.PWM(MotorA_PWM,30)
+	turnPWM = GPIO.PWM(MotorB_PWM,30)
 
 def clamp(n,n_min,n_max): return max(n_min, min(n,n_max))
 
@@ -50,12 +51,16 @@ def motor(speed):
 
 def turn(angle):
 	if angle > 0:
+		turnPWM.changeDutyCycle(angle)
 		GPIO.output(MotorB_1, GPIO.HIGH)
 		GPIO.output(MotorB_2, GPIO.LOW)
 	elif angle < 0:
+		angle = -angle
+		turnPWM.changeDutyCycle(angle)
 		GPIO.output(MotorB_1, GPIO.LOW)
 		GPIO.output(MotorB_2, GPIO.HIGH)
 	else:
+		turnPWM.stop()
 		GPIO.output(MotorB_1, GPIO.LOW)
 		GPIO.output(MotorB_2, GPIO.LOW)
 
