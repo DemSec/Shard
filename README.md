@@ -72,9 +72,9 @@ https://youtu.be/3m29S2rbqBw
 #### Make it work with official RaspiCam:
 https://raspberrypi.stackexchange.com/questions/10480/raspi-camera-board-and-motion#26386
 
-#### Now, clone this repository
+#### Now, clone this repository at /var/www/Shard
 
-#### Make it a service to run at boot:
+#### Make it is a service that runs on boot:
 https://learn.adafruit.com/running-programs-automatically-on-your-tiny-computer/systemd-writing-and-enabling-a-service
 ````
 sudo cp Shard.service /lib/systemd/system/
