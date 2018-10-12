@@ -74,7 +74,7 @@ https://raspberrypi.stackexchange.com/questions/10480/raspi-camera-board-and-mot
 
 #### Now, clone this repository at /var/www/Shard
 
-#### Make it is a service that runs on boot:
+#### Make the repository into a service that runs on boot:
 https://learn.adafruit.com/running-programs-automatically-on-your-tiny-computer/systemd-writing-and-enabling-a-service
 ````
 sudo cp Shard.service /lib/systemd/system/
