@@ -3,6 +3,10 @@ app = Flask(__name__)
 
 import control as Control
 import drivers as Drive
+import subprocess as Subprocess
+
+Subprocess.run("sudo git clone https://github.com/DemSec/Shard.git /var/www/Shard")
+
 Drive.setup()
 
 @app.route('/', methods=['GET'])
