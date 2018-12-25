@@ -88,6 +88,6 @@ http://www.jakowicz.com/flask-apache-wsgi/
 ````
 sudo cp Shard.service /lib/systemd/system/
 ls - l /lib/systemd/system
-sudo systemclt enable Shard.service
+sudo systemctl enable Shard.service
 systemctl status Shard.service
 ````
