@@ -73,7 +73,9 @@ https://youtu.be/3m29S2rbqBw
 https://raspberrypi.stackexchange.com/questions/10480/raspi-camera-board-and-motion#26386
 
 #### Now, clone this repository at /var/www/Shard
-
+````
+sudo git clone https://github.com/DemSec/Shard.git /var/www/Shard
+````
 #### Make the repository into a service that runs on boot:
 https://learn.adafruit.com/running-programs-automatically-on-your-tiny-computer/systemd-writing-and-enabling-a-service
 ````
