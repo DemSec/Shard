@@ -5,15 +5,8 @@ import control as Control
 import drivers as Drive
 import subprocess as Subprocess
 
-#This is a comment
-#This is another comment
-
-#Subprocess.run("cd /var/www/Shard &&\
-#		git init &&\ 
-#		git remote add origin https://github.com/DemSec/Shard.git &&\
-#		git fetch &&\
-#		git reset origin/master &&\
-#		git checkout -t origin/master")
+# Update Shard
+Subprocess.run("cd /var/www/Shard && sudo git pull")
 
 Drive.setup()
 
