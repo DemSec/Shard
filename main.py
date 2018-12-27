@@ -5,6 +5,8 @@ import control as Control
 import drivers as Drive
 import subprocess as Subprocess
 
+# Comment to test auto-update
+
 # Update Shard
 Subprocess.run("cd /var/www/Shard && sudo git pull")
 
