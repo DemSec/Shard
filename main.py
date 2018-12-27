@@ -8,7 +8,7 @@ import subprocess as Subprocess
 # Comment to test auto-update 3
 
 # Update Shard
-Subprocess.run("sudo git -C /var/www/Shard pull")
+#Subprocess.run("sudo git -C /var/www/Shard pull")
 
 Drive.setup()
 
