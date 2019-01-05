@@ -82,12 +82,9 @@ https://learn.adafruit.com/running-programs-automatically-on-your-tiny-computer/
 ````
 sudo cp /var/www/Shard/Shard.service /lib/systemd/system/
 sudo systemctl enable Shard.service
+(ls - l /lib/systemd/system)
+(systemctl status Shard.service)
 ````
 
 #### Make Flask run through Apache SSL:
 http://www.jakowicz.com/flask-apache-wsgi/
-````
-ls - l /lib/systemd/system
-sudo systemctl enable Shard.service
-systemctl status Shard.service
-````
