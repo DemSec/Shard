@@ -42,10 +42,11 @@ sudo chmod 600 /etc/ssl/localcerts/apache*
 (man openssl)
 sudo a2enmod ssl
 sudo nano /etc/apache2/sites-available/default-ssl.conf
-    ServerName 192.168.1.X:443
-    SSLEngine On
+    ServerName 192.168.1.X:443 # I don't know what this does...
+    SSLEngine On # Make sure this is on
     SSLCertificateFile /etc/ssl/localcerts/apache.pem
     SSLCertificateKeyFile /etc/ssl/localcerts/apache.key
+(I don't what what this does either)
 sudo a2ensite sitename
 (port 443 is open by default in: /etc/apache2/ports.conf)
 sudo service apache2 restart
@@ -79,7 +80,7 @@ sudo git clone https://github.com/DemSec/Shard.git /var/www/Shard
 #### Make the repository into a service that runs on boot:
 https://learn.adafruit.com/running-programs-automatically-on-your-tiny-computer/systemd-writing-and-enabling-a-service
 ````
-sudo cp Shard.service /lib/systemd/system/
+sudo cp /var/www/Shard/Shard.service /lib/systemd/system/
 sudo systemctl enable Shard.service
 ````
 
