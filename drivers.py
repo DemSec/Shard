@@ -71,7 +71,7 @@ def ledFL(state):
 		GPIO.output(LED_WhiteL, GPIO.LOW)
 
 def ledFR(state):
-    if state > 0:
+	if state > 0:
 		GPIO.output(LED_WhiteR, GPIO.HIGH)
 	else:
 		GPIO.output(LED_WhiteR, GPIO.LOW)
