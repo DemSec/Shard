@@ -95,69 +95,104 @@
         bottom: 150px;
         right: 100px;
       }
-      .slider {
-          -webkit-appearance: none;
-          width: 100%;
-          height: 25px;
-          background: #d3d3d3;
-          outline: none;
-          opacity: 0.7;
-          -webkit-transition: .2s;
-          transition: opacity .2s;
-      }
-      .slider:hover {
-          opacity: 1;
-      }
-      .slider::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
-          width: 25px;
-          height: 25px;
-          background: #4CAF50;
-          cursor: pointer;
-      }
-      .slider::-moz-range-thumb {
-          width: 25px;
-          height: 25px;
-          background: #4CAF50;
-          cursor: pointer;
-      }
     </style>
     <!--<script src="https://raw.githubusercontent.com/h5bp/html5-boilerplate/master/dist/js/vendor/modernizr-3.5.0.min.js"></script>-->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
     <!--<script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>-->
-    <!--<script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>-->
+    <script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
   </head>
-  <body>
+  <body onload="loadSounds();">
     <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upg$
 <![endif]-->
-    <div class="controller">
-      <div class="leftPanel">
-      	<div id="slidecontainer">
-  			<input type="range" min="-100" max="100" value="0" class="slider" id="motorSlider" onmouseup="motorSlider.value=0">
-  			<p>Value: <span id="demo"></span></p>
-		</div>
-      </div>
-      <div class="centerPanel">
-      </div>
-      <div class="rightPanel">
-      	<input type="range" min="-100" max="100" value="0" class="slider" id="turnSlider" onmouseup="turnSlider.value=0">
-      </div>
-    </div>
-    <script>
-      var motorSlider = document.getElementById("motorSlider");
-      var turnSlider = document.getElementById("turnSlider");
-      var output = document.getElementById("demo");
-
-      setInterval(postData, 1000);
-
-      function postData() {
-          output.innerHTML = motorSlider.value;
-          $.post("/", {motor: motorSlider.value, turn: turnSlider.value});
+    <script>	  
+      function loadSounds() {
+        createjs.Sound.registerSound("https://raw.githubusercontent.com/Quantum-Helix/Shard/master/templates/Assets/Button%20Click%201.ogg", "click");
+        createjs.Sound.registerSound("https://raw.githubusercontent.com/Quantum-Helix/Shard/master/templates/Assets/Button%20Unclick%201.ogg", "unclick");
+      }
+      function upPress() {
+	createjs.Sound.play("click");
+        document.getElementById("up").style.backgroundColor = "#3e8e41";
+        document.getElementById("up").style.boxShadow = "0 5px #666";
+        document.getElementById("up").style.transform = "translateY(4px)";
+        $.post("/", {motor: "1"});
+      }
+      function upRelease() {
+	createjs.Sound.play("unclick");
+        document.getElementById("up").style.backgroundColor = "#4CAF50";
+        document.getElementById("up").style.boxShadow = "0 9px #999";
+        document.getElementById("up").style.transform = "translateY(0px)";
+        $.post("/", {motor: "0"});
+      }
+      function downPress() {
+	createjs.Sound.play("click");
+        document.getElementById("down").style.backgroundColor = "#3e8e41";
+        document.getElementById("down").style.boxShadow = "0 5px #666";
+        document.getElementById("down").style.transform = "translateY(4px)";
+        $.post("/", {motor: "-1"});
+      }
+      function downRelease() {
+	createjs.Sound.play("unclick");
+        document.getElementById("down").style.backgroundColor = "#4CAF50";
+        document.getElementById("down").style.boxShadow = "0 9px #999";
+        document.getElementById("down").style.transform = "translateY(0px)";
+        $.post("/", {motor: "0"});
+      }
+      function leftPress() {
+	createjs.Sound.play("click");
+        document.getElementById("left").style.backgroundColor = "#3e8e41";
+        document.getElementById("left").style.boxShadow = "0 5px #666";
+        document.getElementById("left").style.transform = "translateY(4px)";
+        $.post("/", {turn: "-1"});
+      }
+      function leftRelease() {
+	createjs.Sound.play("unclick");
+        document.getElementById("left").style.backgroundColor = "#4CAF50";
+        document.getElementById("left").style.boxShadow = "0 9px #999";
+        document.getElementById("left").style.transform = "translateY(0px)";
+        $.post("/", {turn: "0"});
+      }
+      function rightPress() {
+	createjs.Sound.play("click");
+        document.getElementById("right").style.backgroundColor = "#3e8e41";
+        document.getElementById("right").style.boxShadow = "0 5px #666";
+        document.getElementById("right").style.transform = "translateY(4px)";
+        $.post("/", {turn: "1"});
+      }
+      function rightRelease() {
+	createjs.Sound.play("unclick");
+        document.getElementById("right").style.backgroundColor = "#4CAF50";
+        document.getElementById("right").style.boxShadow = "0 9px #999";
+        document.getElementById("right").style.transform = "translateY(0px)";
+        $.post("/", {turn: "0"});
+      }
+      function lightsPress() {
+	createjs.Sound.play("click");
+        document.getElementById("lights").style.backgroundColor = "#dd6c21";
+        document.getElementById("lights").style.boxShadow = "0 5px #999";
+        document.getElementById("lights").style.transform = "translateY(4px)";
+        $.post("/", {lights: "1"});
+      }
+      function lightsRelease() {
+	createjs.Sound.play("unclick");
+        document.getElementById("lights").style.backgroundColor = "#f77c2a";
+        document.getElementById("lights").style.boxShadow = "0 9px #db5a04";
+        document.getElementById("lights").style.transform = "translateY(0px)";
+        $.post("/", {lights: "0"});
       }
     </script>
+    <div class="controller">
+      <div class="leftPanel">
+        <button class="green" id="up" ontouchstart="upPress();" ontouchend="upRelease();">⇧</button>
+        <button class="green" id="down" ontouchstart="downPress();" ontouchend="downRelease();">⇩</button>
+      </div>
+      <div class="centerPanel">
+        <button class="orange" id="lights" ontouchstart="lightsPress();" ontouchend="lightsRelease();">💡</button>
+      </div>
+      <div class="rightPanel">
+        <button class="green" id="left" ontouchstart="leftPress();" ontouchend="leftRelease();">⇦</button>
+        <button class="green" id="right" ontouchstart="rightPress();" ontouchend="rightRelease();">⇨</button>
+      </div>
+    </div>
   </body>
 </html>
-
