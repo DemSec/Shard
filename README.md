@@ -88,3 +88,12 @@ sudo systemctl enable Shard.service
 
 #### Make Flask run through Apache SSL:
 http://www.jakowicz.com/flask-apache-wsgi/
+
+#### Simple GitHub guide:
+https://rogerdudler.github.io/git-guide/
+````
+sudo git config --global user.email "email"
+sudo git add *
+sudo git commit -m "message"
+sudo git push origin master
+````
