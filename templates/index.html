@@ -111,70 +111,70 @@
         createjs.Sound.registerSound("https://raw.githubusercontent.com/Quantum-Helix/Shard/master/templates/Assets/Button%20Unclick%201.ogg", "unclick");
       }
       function upPress() {
-		createjs.Sound.play("click");
+	createjs.Sound.play("click");
         document.getElementById("up").style.backgroundColor = "#3e8e41";
         document.getElementById("up").style.boxShadow = "0 5px #666";
         document.getElementById("up").style.transform = "translateY(4px)";
         $.post("/", {motor: "1"});
       }
       function upRelease() {
-		createjs.Sound.play("unclick");
+	createjs.Sound.play("unclick");
         document.getElementById("up").style.backgroundColor = "#4CAF50";
         document.getElementById("up").style.boxShadow = "0 9px #999";
         document.getElementById("up").style.transform = "translateY(0px)";
         $.post("/", {motor: "0"});
       }
       function downPress() {
-		createjs.Sound.play("click");
+	createjs.Sound.play("click");
         document.getElementById("down").style.backgroundColor = "#3e8e41";
         document.getElementById("down").style.boxShadow = "0 5px #666";
         document.getElementById("down").style.transform = "translateY(4px)";
         $.post("/", {motor: "-1"});
       }
       function downRelease() {
-		createjs.Sound.play("unclick");
+	createjs.Sound.play("unclick");
         document.getElementById("down").style.backgroundColor = "#4CAF50";
         document.getElementById("down").style.boxShadow = "0 9px #999";
         document.getElementById("down").style.transform = "translateY(0px)";
         $.post("/", {motor: "0"});
       }
       function leftPress() {
-		createjs.Sound.play("click");
+	createjs.Sound.play("click");
         document.getElementById("left").style.backgroundColor = "#3e8e41";
         document.getElementById("left").style.boxShadow = "0 5px #666";
         document.getElementById("left").style.transform = "translateY(4px)";
         $.post("/", {turn: "-1"});
       }
       function leftRelease() {
-		createjs.Sound.play("unclick");
+	createjs.Sound.play("unclick");
         document.getElementById("left").style.backgroundColor = "#4CAF50";
         document.getElementById("left").style.boxShadow = "0 9px #999";
         document.getElementById("left").style.transform = "translateY(0px)";
         $.post("/", {turn: "0"});
       }
       function rightPress() {
-		createjs.Sound.play("click");
+	createjs.Sound.play("click");
         document.getElementById("right").style.backgroundColor = "#3e8e41";
         document.getElementById("right").style.boxShadow = "0 5px #666";
         document.getElementById("right").style.transform = "translateY(4px)";
         $.post("/", {turn: "1"});
       }
       function rightRelease() {
-		createjs.Sound.play("unclick");
+	createjs.Sound.play("unclick");
         document.getElementById("right").style.backgroundColor = "#4CAF50";
         document.getElementById("right").style.boxShadow = "0 9px #999";
         document.getElementById("right").style.transform = "translateY(0px)";
         $.post("/", {turn: "0"});
       }
       function lightsPress() {
-		createjs.Sound.play("click");
+	createjs.Sound.play("click");
         document.getElementById("lights").style.backgroundColor = "#dd6c21";
         document.getElementById("lights").style.boxShadow = "0 5px #999";
         document.getElementById("lights").style.transform = "translateY(4px)";
         $.post("/", {lights: "1"});
       }
       function lightsRelease() {
-		createjs.Sound.play("unclick");
+	createjs.Sound.play("unclick");
         document.getElementById("lights").style.backgroundColor = "#f77c2a";
         document.getElementById("lights").style.boxShadow = "0 9px #db5a04";
         document.getElementById("lights").style.transform = "translateY(0px)";
