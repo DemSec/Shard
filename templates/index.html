@@ -118,6 +118,7 @@
 	     target.href = port[2];
 	     target.port = port[1];
 	  }
+	  document.getElementById("cameraImage").setAttribute('src', target.getAttribute('href'));
 	}
       }
       function upPress() {
@@ -198,7 +199,7 @@
       </div>
       <div class="centerPanel">
         <button class="orange" id="lights" ontouchstart="lightsPress();" ontouchend="lightsRelease();">💡</button>
-	<a id="camera" href=":8080/?action=stream"><img src=":8080/?action=stream" border="0" width="100%"></a>
+	<a id="camera" href=":8080/?action=stream"><img id="cameraImage" src=":8080/?action=stream" border="0" width="100%"></a>
       </div>
       <div class="rightPanel">
         <button class="green" id="left" ontouchstart="leftPress();" ontouchend="leftRelease();">⇦</button>
