@@ -109,6 +109,16 @@
       function loadSounds() {
         createjs.Sound.registerSound("https://raw.githubusercontent.com/Quantum-Helix/Shard/master/templates/Assets/Button%20Click%201.ogg", "click");
         createjs.Sound.registerSound("https://raw.githubusercontent.com/Quantum-Helix/Shard/master/templates/Assets/Button%20Unclick%201.ogg", "unclick");
+      	var target = document.getElementById("camera");
+	if (target.tagName.toLowerCase() == 'a')
+	{
+	  var port = target.getAttribute('href').match(/^:(\d+)(.*)/);
+	  if (port)
+	  {
+	     target.href = port[2];
+	     target.port = port[1];
+	  }
+	}
       }
       function upPress() {
 	createjs.Sound.play("click");
@@ -188,7 +198,7 @@
       </div>
       <div class="centerPanel">
         <button class="orange" id="lights" ontouchstart="lightsPress();" ontouchend="lightsRelease();">💡</button>
-	<a href="http://10.0.0.148:8080/?action=stream"> <img src="http://10.0.0.148:8080/?action=stream" border="0" width="100%"></a>
+	<a id="camera" href=":8080/?action=stream"><img src=":8080/?action=stream" border="0" width="100%"></a>
       </div>
       <div class="rightPanel">
         <button class="green" id="left" ontouchstart="leftPress();" ontouchend="leftRelease();">⇦</button>
