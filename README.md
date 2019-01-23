@@ -3,12 +3,28 @@
 
 #### Project path: /var/www/Shard
 
-#### Enable SSH, SPI, change host name:
+#### Flash a Desktop verison of Raspibian to 8GB SD card:
+https://www.raspberrypi.org/downloads/raspbian/
+
+#### If using RPi Zero, create an 'ssh' file to boot to enable SSH
+#### At the very bottom of 'config.txt', add:
+````
+dtoverlay=dwc2
+````
+
+#### In 'cmdline.txt', after 'rootwait', add:
+````
+modules-load=dwc2,g_ether
+````
+
+#### Now, load the SD card.
+
+#### Enable SSH, VNC, change host name and password:
 ````
 sudo raspi-config
 ````
     
-#### Change password:
+#### Or change password via command line:
 ````
 sudo passwd <user>
 ````
@@ -25,13 +41,12 @@ sudo apt-get upgrade
 
 #### Install Flask: http://flask.pocoo.org/
 http://mattrichardson.com/Raspberry-Pi-Flask/
-
 ````
 sudo apt-get install python-pip
 sudo pip install flask
 ````
 
-#### Install Apache SSL: https://wiki.debian.org/Self-Signed_Certificate
+#### (SKIP) Install Apache SSL: https://wiki.debian.org/Self-Signed_Certificate
 ````
 sudo apt-get install apache2
 sudo apt-get install openssl
@@ -55,7 +70,7 @@ Browse to https://192.168.1.X
 
 #### (python-pip is installed by default)
 
-#### Change default webpage location:
+#### (SKIP) Change default webpage location:
 ````
 sudo nano /etc/apache2/sites-available/000-default.conf
     DocumentRoot /var/www/Shard/templates
@@ -64,13 +79,14 @@ sudo nano /etc/apache2/sites-available/default-ssl.conf
     DocumentRoot /var/www/Shard/templates
 ````
 
-#### Apache Security:
+#### (SKIP) Apache Security:
 http://www.tecmint.com/apache-security-tips/
 http://www.petefreitag.com/item/505.cfm
 
-#### Install Motion: 
+#### (SKIP) Install Motion: 
 https://youtu.be/3m29S2rbqBw
-#### Make it work with official RaspiCam:
+
+#### RaspiCam to USB /dev/video0 conversion:
 https://raspberrypi.stackexchange.com/questions/10480/raspi-camera-board-and-motion#26386
 
 #### Now, clone this repository at /var/www/Shard
@@ -86,10 +102,10 @@ sudo systemctl enable Shard.service
 (systemctl status Shard.service)
 ````
 
-#### Make Flask run through Apache SSL:
+#### (SKIP) Make Flask run through Apache SSL:
 http://www.jakowicz.com/flask-apache-wsgi/
 
-#### Simple GitHub guide:
+#### Simple Guide to GIT:
 https://rogerdudler.github.io/git-guide/
 ````
 sudo git config --global user.email "email"
@@ -97,3 +113,9 @@ sudo git add *
 sudo git commit -m "message"
 sudo git push origin master
 ````
+````
+sudo git pull
+````
+
+#### Download and Install mjpg-streamer:
+https://github.com/jacksonliam/mjpg-streamer
