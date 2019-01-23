@@ -3,7 +3,7 @@
 
 #### Project path: /var/www/Shard
 
-#### Flash a Desktop verison of Raspibian to 8GB SD card:
+#### Flash a Desktop verison of Raspibian to 8GB SD card using Etcher:
 https://www.raspberrypi.org/downloads/raspbian/
 
 #### If using RPi Zero, create an 'ssh' file to boot to enable SSH
