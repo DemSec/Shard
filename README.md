@@ -17,7 +17,7 @@ dtoverlay=dwc2
 modules-load=dwc2,g_ether
 ````
 
-#### Now, load the SD card.
+#### Now, load the SD card and connect to computer through microUSB hub
 
 #### Download iTunes:
 https://www.apple.com/itunes/download/
