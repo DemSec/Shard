@@ -125,3 +125,4 @@ sudo git pull
 
 #### Download and Install mjpg-streamer:
 https://github.com/jacksonliam/mjpg-streamer
+#### (TODO) Make it a service that runs on boot
