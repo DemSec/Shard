@@ -42,6 +42,9 @@ sudo apt-get update
 sudo apt-get upgrade
 ````
 
+#### Connect through VNC using <hostname\>.local and setup wpa_supplicant.conf
+#### Now, login into VNC account
+
 #### (Python and GPIO is pre-installed)
 
 #### A similar project made by Sparkfun: https://www.youtube.com/watch?v=L55QYFnnrgo
