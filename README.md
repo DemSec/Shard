@@ -98,6 +98,10 @@ https://youtu.be/3m29S2rbqBw
 
 #### RaspiCam to USB /dev/video0 conversion:
 https://raspberrypi.stackexchange.com/questions/10480/raspi-camera-board-and-motion#26386
+Add to the end of /etc/modules file:
+````
+bcm2835-v4l2
+````
 
 #### Now, clone this repository at /var/www/Shard
 ````
