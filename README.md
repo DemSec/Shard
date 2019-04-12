@@ -50,9 +50,13 @@ sudo apt-get update
 sudo apt-get upgrade
 ````
 
-#### (Python and GPIO is pre-installed)
-
 #### A similar project made by Sparkfun: https://www.youtube.com/watch?v=L55QYFnnrgo
+
+#### (Python and GPIO is pre-installed)
+#### (python-pip is installed by default)
+````
+sudo apt-get install python-pip
+````
 
 #### Install Flask: http://flask.pocoo.org/
 http://mattrichardson.com/Raspberry-Pi-Flask/
@@ -82,8 +86,6 @@ sudo a2ensite sitename
 sudo service apache2 restart
 Browse to https://192.168.1.X
 ````
-
-#### (python-pip is installed by default)
 
 #### (SKIP) Change default webpage location:
 ````
