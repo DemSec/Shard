@@ -57,8 +57,7 @@ sudo apt-get upgrade
 ````
 sudo apt-get install python-pip
 ````
-
-#### Install Flask: http://flask.pocoo.org/
+#### (Flask is installed by default now) Install Flask: http://flask.pocoo.org/
 http://mattrichardson.com/Raspberry-Pi-Flask/
 ````
 sudo pip install flask
