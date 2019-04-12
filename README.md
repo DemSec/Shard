@@ -43,7 +43,7 @@ sudo passwd <user>
 #### Disable Bluetooth
 #### Verify WiFi is connected
 
-#### Update your installer and Upgrade your Raspibian (will take a long while):
+#### Update your installer and Upgrade your Raspibian (will take a long while, then reboot):
 ````
 sudo apt-get update
 sudo apt-get upgrade
