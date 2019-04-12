@@ -24,7 +24,7 @@ modules-load=dwc2,g_ether
 https://www.apple.com/itunes/download/
 #### Change the extention of iTunes64Setup.exe to .rar
 #### Unzip and run Bonjour64.msi, this installs Bonjour v3.0, the newest version available
-#### This allows PuTTY to connect through <hostname\>.local IP addresses
+#### This allows PuTTY and VNC to connect through <hostname\>.local IP addresses
 #### Default hostname is 'raspberrypi', default user is 'pi', default password is 'raspberry'
 
 #### Enable SSH, VNC, change host name and password:
