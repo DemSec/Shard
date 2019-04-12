@@ -27,7 +27,7 @@ https://www.apple.com/itunes/download/
 #### This allows PuTTY and VNC to connect through <hostname\>.local IP addresses
 #### Default hostname is 'raspberrypi', default user is 'pi', default password is 'raspberry'
 
-#### Enable SSH, VNC, change host name and password:
+#### Enable SSH, VNC, (Camera), expand filesystem, change resolution, change host name and password (then reboot):
 ````
 sudo raspi-config
 ````
