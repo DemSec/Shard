@@ -37,14 +37,17 @@ sudo raspi-config
 sudo passwd <user>
 ````
 
+#### Connect through VNC using <hostname\>.local and setup wpa_supplicant.conf
+#### Optional: Login into VNC account to enable cloud controll
+
+#### Disable Bluetooth
+#### Verify WiFi is connected
+
 #### Update your installer and Upgrade your Raspibian (will take a long while):
 ````
 sudo apt-get update
 sudo apt-get upgrade
 ````
-
-#### Connect through VNC using <hostname\>.local and setup wpa_supplicant.conf
-#### Now, login into VNC account
 
 #### (Python and GPIO is pre-installed)
 
