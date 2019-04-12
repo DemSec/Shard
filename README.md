@@ -37,7 +37,8 @@ sudo raspi-config
 sudo passwd <user>
 ````
 
-#### Connect through VNC using <hostname\>.local and setup wpa_supplicant.conf
+#### Connect through VNC using <hostname\>.local 
+#### Setup wpa_supplicant.conf if not done at the beggining and reboot
 #### Optional: Login into VNC account to enable cloud controll
 
 #### Disable Bluetooth
