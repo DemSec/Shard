@@ -20,8 +20,8 @@ modules-load=dwc2,g_ether
 
 #### Now, load the SD card and connect to computer through microUSB hub
 
-#### Download iTunes:
-https://www.apple.com/itunes/download/
+    #### Download iTunes:
+    https://www.apple.com/itunes/download/
 #### Change the extention of iTunes64Setup.exe to .rar
 #### Unzip and run Bonjour64.msi, this installs Bonjour v3.0, the newest version available
 #### This allows PuTTY to connect through <hostname\>.local IP addresses
