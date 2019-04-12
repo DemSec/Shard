@@ -7,6 +7,7 @@
 https://www.raspberrypi.org/downloads/raspbian/
 
 #### If using RPi Zero, create an 'ssh' file to boot to enable SSH
+#### Optional: Paste the 'wpa_supplicant.conf'
 #### At the very bottom of 'config.txt', add:
 ````
 dtoverlay=dwc2
